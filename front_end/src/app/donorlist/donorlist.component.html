@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div *ngIf="deleteMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success Delete!</strong> Donor Deleted
+  <button (click)="confirmDelete()" type="buttton" data-bs-dismiss="alert" aria-lable="Close">X</button>
+</div>
+<table class="table caption-top">
+  <caption>List of donors</caption>
+  <!-- after submit the form, it will apear the successful message -->
+  <thead>
+    <tr>
+      <!-- Table -->
+      <th class="table-danger" scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th class="table-danger" scope="col">DATE OF BIRTH</th>
+      <th scope="col">GENDER</th>
+      <th class="table-danger" scope="col">ADDRESS</th>
+      <th scope="col">EMAIL ADDRESS</th>
+      <th class="table-danger" scope="col">CONTACT NUMBER</th>
+      <th scope="col">BLOOD TYPE</th>
+      <th class="table-danger" scope="col">ACTION</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <!-- return value -->
+    <tr *ngFor="let item of listData">
+      <th class="table-danger" scope="row">{{item.donor_id}}</th>
+      <th scope="row">{{item.name}}</th>
+      <th class="table-danger" cope="row">{{item.date_of_birth}}</th>
+      <th scope="row">{{item.gender}}</th>
+      <th class="table-danger" scope="row">{{item.address}}</th>
+      <th scope="row">{{item.email_add}}</th>
+      <th class="table-danger" scope="row">{{item.contact_number}}</th>
+      <th scope="row">{{item.bloods_id}}</th>
+      <td>
+
+
+
+        <span (click)="deleteDonor(item.donor_id)"><button type="button" class="btn btn-danger">DELETE</button></span>
+        &nbsp;
+        <a routerLink="/editdonor/{{item.donor_id}}"><button type="button" class="btn btn-info">EDIT</button></a>
+      </td>
+    </tr>
