@@ -5,12 +5,6 @@
 // //products route
 // require __DIR__ . '/Controllers/blood.php';
 
-// //products route
-// require __DIR__ . '/Controllers/consultation.php';
-
-// //products route
-// require __DIR__ . '/Controllers/donation.php';
-
 //products route
 require __DIR__ . '/Controllers/donor.php';
 
