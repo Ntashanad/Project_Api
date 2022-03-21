@@ -1,5 +1,5 @@
 <?php
-//get all products
+//get all blood
 function getAllBloods($db)
 {
 $sql = 'Select b.blood_id, b.blood_type, b.date_of_collection, b.expiry_date from blood b ';
@@ -9,7 +9,7 @@ $stmt ->execute();
 return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-//get product by id
+//get blood by id
 function getBlood($db, $bloodId)
 {
 $sql = 'Select b.blood_id, b.blood_type, b.date_of_collection, b.expiry_date from blood b ';
@@ -23,7 +23,7 @@ $stmt->execute();
 return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-    //add new movie
+    //add new blood
 function createBlood($db, $form_data) {
     $sql = 'Insert into blood (blood_type, date_of_collection, expiry_date) ';
     $sql .= 'values (:blood_type, :date_of_collection, :expiry_date) ';
@@ -36,7 +36,7 @@ function createBlood($db, $form_data) {
 }   
 
 
-   //delete movie by id
+   //delete blood by id
 function deleteBlood($db,$bloodId) {
     $sql = ' Delete from blood where blood_id = :blood_id';
     $stmt = $db->prepare($sql);
@@ -45,7 +45,7 @@ function deleteBlood($db,$bloodId) {
     $stmt->execute();
     }
 
-//update product by id
+//update blood by id
 function updateBlood($db,$form_dat,$bloodId) 
 {
     $sql = 'UPDATE blood SET blood_type = :blood_type , date_of_collection = :date_of_collection, expiry_date = :expiry_date ';
