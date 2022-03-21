@@ -2,11 +2,11 @@
 //hello route 
 // require __DIR__ . '/Controllers/hello.php';
 
-// //products route
+// //blood route
 // require __DIR__ . '/Controllers/blood.php';
 
-//products route
+//donor route
 require __DIR__ . '/Controllers/donor.php';
 
-// //products route
+// //staff route
 // require __DIR__ . '/Controllers/staff.php';
